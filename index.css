@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #800000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.page-header {
+  background-color: #800000;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 5px solid #ffffff;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.login-section,
+.dashboard-section,
+.receive-section {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.wallet-status {
+  font-size: 36px;
+  color: #800000;
+  margin-bottom: 20px;
+}
+
+.receive-address {
+  display: block;
+  margin-bottom: 10px;
+  color: #800000;
+  font-weight: bold;
+}
+
+.receive-heading {
+  font-size: 36px;
+  color: #800000;
+  font-weight: bold;
+}
+
+.login-btn,
+.logout-btn {
+  background: #800000;
+  color: white;
+  padding: 15px;
+  font-size: 20px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.login-btn:hover,
+.logout-btn:hover {
+  background-color: #600000;
+}
+
+.payment-section {
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.payment-section label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #800000;
+}
+
+#payment-address,
+#payment-amount {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+#scan-address,
+#confirm-payment {
+  background: #800000;
+  color: white;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+#scan-address:hover,
+#confirm-payment:hover {
+  background-color: #600000;
+}
+
+/* 新增 QR Scanner Modal 的樣式 */
+.qr-scanner-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.qr-scanner-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.close-qr-scanner {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}

@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Web3.js LIBRARY -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.1/web3.min.js"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <!-- QR Code Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode/1.4.4/qrcode.min.js"></script>
+  <!-- HTML5 QR Code Scanner Library -->
+  <script src="https://unpkg.com/html5-qrcode@2.3.7/minified/html5-qrcode.min.js"></script>
+
+  <!-- CSS STYLES -->
+  <link rel="stylesheet" href="index.css" />
+  <title>東東大學WiFi 登入</title>
+</head>
+<body>
+  <!-- PAGE HEADER -->
+  <header class="page-header">東東大學網路認證</header>
+
+  <!-- LOGIN SECTION -->
+  <section class="login-section">
+    <button id="login-button" class="login-btn">🔓 登入東東大學WiFi</button>
+    <span class="instruction">
+      請確認已安裝支援以太坊或者EVM的錢包，例如MetaMask(小狐狸)錢包
+    </span>
+  </section>
+
+  <!-- DASHBOARD SECTION -->
+  <section class="dashboard-section" style="display: none;">
+    <h2 class="wallet-status">東東大學WiFi登入成功!!</h2>
+    <h3 class="wallet-address-heading">
+      登入的DID是：
+      <span class="wallet-address"></span>
+    </h3>
+    <h3 class="wallet-balance-heading" style="display: none;">
+      ETH Balance:
+      <span class="wallet-balance"></span>
+    </h3>
+    <button id="logout-button" class="logout-btn">🔐 登出東東大學WiFi</button>
+    <button class="login-btn" id="generate-receive">東東Pay收款&付款</button>
+  </section>
+
+  <!-- RECEIVE SECTION -->
+  <section class="receive-section" style="display: none;">
+    <h3 class="receive-heading">收款地址</h3>
+    <span class="receive-address"></span>
+    <canvas id="qrcode"></canvas>
+
+    <div class="payment-section" style="margin-top: 20px; display: none;">
+      <h3>我要付款</h3>
+      <label for="payment-address">付款地址：</label>
+      <input type="text" id="payment-address" placeholder="請輸入收款地址" style="width: 100%; margin-bottom: 10px;">
+      <button id="scan-address" class="login-btn">掃描收款地址</button>
+      <label for="payment-amount">付款金額：</label>
+      <input type="number" id="payment-amount" placeholder="請輸入金額" style="width: 100%; margin-bottom: 10px;">
+      <button id="confirm-payment" class="login-btn">付款</button>
+    </div>
+  </section>
+
+  <!-- QR Scanner Modal -->
+  <div id="qr-scanner-modal" class="qr-scanner-modal" style="display: none;">
+    <div class="qr-scanner-content">
+      <span class="close-qr-scanner">&times;</span>
+      <div id="qr-reader" style="width: 300px;"></div>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script src="./index.js"></script>
+</body>
+</html>
